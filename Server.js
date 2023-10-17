@@ -11,7 +11,7 @@ const authroute = require("./Router/router");
 require('dotenv').config()
 const {
   checkLoggedIn
-} = require("./Controller/coursecontroller");
+} = require("./Controller/Coursecontroller.js");
 
 app.use(
   cors({
