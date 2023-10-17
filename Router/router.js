@@ -10,7 +10,7 @@ const {
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173/",
+    successRedirect: process.env.SITE,
     failureRedirect: "/login/failed",
   })
 );
@@ -53,7 +53,7 @@ router.get("/logout", (req, res) => {
       console.error(err);
     }
     // Redirect after successful logout or error handling
-    res.redirect("http://localhost:5173");
+    res.redirect(process.env.SITE);
   });
 });
 // router.post("/login");
