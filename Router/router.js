@@ -5,7 +5,7 @@ const {
   getAllCourses,
   deleteCourse,
   checkLoggedIn,
-} = require("../Controller/coursecontroller");
+} = require("../Controller/Coursecontroller.js");
 
 router.get(
   "/google/callback",
