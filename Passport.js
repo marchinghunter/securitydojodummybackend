@@ -1,16 +1,15 @@
 const passport = require("passport");
 const User = require("./Schema/userschema");
+require('dotenv').config()
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-GOOGLE_CLIENT_ID = "975154307380-kkk0dg70den4rjhe582q2oupqfn5aqbg.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "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"
 
 passport.use(
   new GoogleStrategy(
     {
-      clientID: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
       scope: ["profile", "email"],
     },
